@@ -1,13 +1,11 @@
 config BR2_PACKAGE_OPENPOWER_PNOR
         bool "openpower_pnor"
         default y if (BR2_OPENPOWER_PLATFORM)
-        select BR2_PACKAGE_HOSTBOOT if !BR2_OPENPOWER_POWER8
-        select BR2_PACKAGE_HOSTBOOT_P8 if BR2_OPENPOWER_POWER8
+        select BR2_PACKAGE_HOSTBOOT
         select BR2_PACKAGE_HOSTBOOT_BINARIES
         select BR2_PACKAGE_SKIBOOT
         select BR2_PACKAGE_OPENPOWER_FFS
-        select BR2_PACKAGE_OCC if !BR2_OPENPOWER_POWER8
-        select BR2_PACKAGE_OCC_P8 if BR2_OPENPOWER_POWER8
+        select BR2_PACKAGE_OCC
         select BR2_PACKAGE_CAPP_UCODE
         select BR2_PACKAGE_IMA_CATALOG
         select BR2_PACKAGE_HOST_OPENPOWER_VPNOR
@@ -156,7 +154,7 @@ config BR2_OPENPOWER_TARGETING_ECC_FILENAME
 
 config BR2_OCMBFW_FILENAME
         string "Name of the OCMBFW Update original file"
-        default "ocmbfw.bin"
+        default "signed_app_fw.mem"
         help
             String used to define name of OCBMFW Update original file (before any processing occurs)
 

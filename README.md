@@ -27,14 +27,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for howto contribute code.
 To build an image for a Palmetto system:
 
 ```
-git clone --recursive git@github.com:open-power/op-build.git
+git clone --recursive https://github.com/open-power/op-build.git
 cd op-build
 ./op-build palmetto_defconfig && ./op-build
 ```
 
 There are also default configurations for other platforms in
-`openpower/configs/`. Current POWER8 platforms include Habanero,
-Firestone, and Garrison. Current POWER9 platforms include Witherspoon,
+`openpower/configs/`. Current POWER9 platforms include Witherspoon,
 Boston (p9dsu), Romulus, and Zaius.
 
 Buildroot/op-build supports both native and cross-compilation - it will
@@ -55,7 +54,7 @@ a handful of other packages (see below).
 3. Install the packages necessary for the build:
 
         sudo apt-get install cscope ctags libz-dev libexpat-dev \
-          python language-pack-en texinfo \
+          python language-pack-en texinfo gawk cpio xxd \
           build-essential g++ git bison flex unzip \
           libssl-dev libxml-simple-perl libxml-sax-perl libxml-parser-perl libxml2-dev libxml2-utils xsltproc \
           wget bc rsync
@@ -66,9 +65,9 @@ a handful of other packages (see below).
 2. Install the packages necessary for the build:
 
         sudo dnf install gcc-c++ flex bison git ctags cscope expat-devel patch \
-          zlib-devel zlib-static texinfo perl-bignum "perl(XML::Simple)" \
+          zlib-devel zlib-static texinfo "perl(bigint)" "perl(XML::Simple)" \
           "perl(YAML)" "perl(XML::SAX)" "perl(Fatal)" "perl(Thread::Queue)" \
-          "perl(Env)" "perl(XML::LibXML)" "perl(Digest::SHA1)" libxml2-devel \
-          which wget unzip tar cpio python bzip2 bc findutils ncurses-devel \
-          openssl-devel
+          "perl(Env)" "perl(XML::LibXML)" "perl(Digest::SHA1)" "perl(ExtUtils::MakeMaker)" \
+          libxml2-devel which wget unzip tar cpio python bzip2 bc findutils ncurses-devel \
+          openssl-devel make libxslt vim-common lzo-devel python2 rsync hostname
 
